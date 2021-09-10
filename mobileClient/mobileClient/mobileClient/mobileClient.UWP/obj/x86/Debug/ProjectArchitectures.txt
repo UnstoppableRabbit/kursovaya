@@ -1,0 +1,1 @@
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\mobileClient.UWP.csproj;x86
