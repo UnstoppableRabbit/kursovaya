@@ -1,9 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
-
-namespace mobileClient
+﻿namespace mobileClient
 {
-    public partial class AppShell : Xamarin.Forms.Shell
+    public partial class AppShell
     {
         public AppShell()
         {

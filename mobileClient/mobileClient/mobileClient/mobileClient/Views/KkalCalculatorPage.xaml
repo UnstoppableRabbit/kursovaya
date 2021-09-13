@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobileClient.Views.KkalCalculatorPage"
+             xmlns:vm="clr-namespace:mobileClient.ViewModels"
+             Title="Калькулятор калорий">
+
+    <ContentPage.BindingContext>
+        <vm:KkalCalculatorViewModel />
+    </ContentPage.BindingContext>
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#ce93d8</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+            <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Picker
+                        ItemsSource="{Binding Products}"
+                        Title="Выберите продукт"
+                        ItemDisplayBinding="{Binding Name}">
+                    </Picker>
+                    <StackLayout Grid.Column="1">
+                        <Label Text="масса (грамм)"></Label>
+                        <Entry></Entry>
+                    </StackLayout>
+                </Grid>
+                <ScrollView>
+                    <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                        <Button Margin="0,10,0,0" Text="Добавить"
+                                BackgroundColor="{StaticResource Primary}"
+                                TextColor="White" />
+                    </StackLayout>
+                </ScrollView>
+                <ListView 
+                          ItemsSource="{Binding ProductList}"
+                          HasUnevenRows="False">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}" FontSize="18" />
+                                        <Label Text="{Binding Weight}" />
+                                        <Label Text="{Binding TotalCalories}" />
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+            </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

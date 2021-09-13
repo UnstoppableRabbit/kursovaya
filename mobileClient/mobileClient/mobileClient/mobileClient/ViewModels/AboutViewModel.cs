@@ -8,7 +8,7 @@ namespace mobileClient.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "Домашняя страница";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
 
