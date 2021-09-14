@@ -81,7 +81,7 @@
     <FlyoutItem Title="Домашняя страница" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Калькулятор калорий" Icon="icon_about.png">
+    <FlyoutItem Title="Калькулятор калорий" Icon="calculator_logo.png">
         <ShellContent Route="KkalCalculator" ContentTemplate="{DataTemplate local:KkalCalculatorPage}" />
     </FlyoutItem>
 

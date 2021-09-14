@@ -9,57 +9,85 @@
         <vm:KkalCalculatorViewModel />
     </ContentPage.BindingContext>
 
-    <!--<ContentPage.Resources>
+    <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#ce93d8</Color>
         </ResourceDictionary>
-    </ContentPage.Resources>-->
+    </ContentPage.Resources>
 
     <ContentPage.Content>
         <Grid>
             <ScrollView>
-            <StackLayout>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Picker
+                <StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Picker
                         ItemsSource="{Binding Products}"
+                        SelectedItem="{Binding SelectedProduct}"
                         Title="Выберите продукт"
                         ItemDisplayBinding="{Binding Name}">
-                    </Picker>
-                    <StackLayout Grid.Column="1">
-                        <Label Text="масса (грамм)"></Label>
-                        <Entry></Entry>
+                        </Picker>
+                        <StackLayout Grid.Column="1">
+                            <Label Text="масса (грамм)"></Label>
+                            <Entry Text="{Binding SelectedWeight}"></Entry>
+                        </StackLayout>
+                    </Grid>
+                    <Button Margin="10,10,10,0" Text="Добавить"
+                                BackgroundColor="{StaticResource Primary}"
+                                Command="{Binding AddProductCommand}"
+                                TextColor="White"
+                                IsEnabled="{Binding CanAddProduct}"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label FontSize="Title">Всего калорий:</Label>
+                        <Label FontSize="Title" Text="{Binding TotalCalories}">
+                        </Label>
                     </StackLayout>
-                </Grid>
-                <ScrollView>
-                    <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                        <Button Margin="0,10,0,0" Text="Добавить"
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="400"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ListView 
+                        ItemsSource="{Binding ProductList}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <StackLayout>
+                                                <Label Text="{Binding Name}" FontSize="18" />
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label>Масса(гармм)</Label>
+                                                    <Label Text="{Binding Weight}" />
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label>Общая калорийность</Label>
+                                                    <Label Text="{Binding TotalCalories}" />
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Margin="10,10,50,0" Text="Удалить"
+                                Command="{Binding ClearProductCommand}"
                                 BackgroundColor="{StaticResource Primary}"
                                 TextColor="White" />
-                    </StackLayout>
-                </ScrollView>
-                <ListView 
-                          ItemsSource="{Binding ProductList}"
-                          HasUnevenRows="False">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.View>
-                                    <StackLayout>
-                                        <Label Text="{Binding Name}" FontSize="18" />
-                                        <Label Text="{Binding Weight}" />
-                                        <Label Text="{Binding TotalCalories}" />
-                                    </StackLayout>
-                                </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                
-            </StackLayout>
+                        <Button Grid.Column="1" Margin="50,10,10,0" Text="Очистить все"
+                                Command="{Binding ClearProductCommand}"
+                                BackgroundColor="{StaticResource Primary}"
+                                TextColor="White"
+                                IsEnabled="{Binding CanClear}"/>
+                    </Grid>
+                </StackLayout>
             </ScrollView>
         </Grid>
     </ContentPage.Content>
