@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
+using DataLib.Sqlite;
 using DataLib.Sqlite.Model;
 using mobileClient.Models;
 using Xamarin.Forms;
@@ -12,21 +13,15 @@ namespace mobileClient.ViewModels
         private int _selectedWeight;
         private double _totalCalories;
         private Product _selectedProduct;
+        private ProductListElement _currentProduct;
         private bool _canAddProduct;
+        private bool _canDeleteCurrent;
         private bool _canClear;
 
         public KkalCalculatorViewModel()
         {
-            
-            Products = new ObservableCollection<Product>()
-            {
-                new Product {Name = "Яблоко", Calories = 120}
-            };
-
-            ProductList = new ObservableCollection<ProductListElement>()
-            {
-                new ProductListElement(Products.First(), 1000)
-            };
+            Products = new ObservableCollection<Product>(ProductContext.Database.GetItems());
+            ProductList = new ObservableCollection<ProductListElement>();
 
             ClearView();
         }
@@ -50,6 +45,17 @@ namespace mobileClient.ViewModels
             }
         }
 
+        public ProductListElement CurrentProduct
+        {
+            get => _currentProduct;
+            set
+            {
+                SetProperty(ref _currentProduct, value);
+                CanDeleteCurrent = CurrentProduct != null;
+            }
+        }
+
+
         public int SelectedWeight
         {
             get => _selectedWeight ;
@@ -68,6 +74,12 @@ namespace mobileClient.ViewModels
             set => SetProperty(ref _canClear, value);
         }
 
+        public bool CanDeleteCurrent
+        {
+            get => _canDeleteCurrent;
+            set => SetProperty(ref _canDeleteCurrent, value);
+        }
+
         public ICommand AddProductCommand =>
             new Command(() =>
             {
@@ -75,10 +87,17 @@ namespace mobileClient.ViewModels
                 ClearView();
             });
 
-        public ICommand ClearProductCommand => 
+        public ICommand ClearProductCommand =>
             new Command(() =>
             {
                 ProductList.Clear();
+                ClearView();
+            });
+
+        public ICommand DeleteCurrentCommand =>
+            new Command(() =>
+            {
+                ProductList.Remove(CurrentProduct);
                 ClearView();
             });
 
@@ -87,8 +106,10 @@ namespace mobileClient.ViewModels
             TotalCalories = ProductList.Sum(_ => _.TotalCalories);
             SelectedWeight = 0;
             SelectedProduct = null;
+            CurrentProduct = null;
             CanAddProduct = false;
             CanClear = ProductList.Count > 0;
+            CanDeleteCurrent = false;
         }
     }
 }

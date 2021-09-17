@@ -1,11 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "AvO0GQ5HNi+AE4JaNkqc8UJcgKfqslByD4XikKH9CBUAD01YEEcVyGS2Odb8fQHmlgqW6wACybaaZf7mZofWxg==",
+  "dgSpecHash": "q0TJnbxCmYitXvDC6Czvhq4UN9QQ3PIAKsxlh8k+mbc/Wo8fGae9aWEsR4dlpXZgBejCTBg3XLNYl6upkw6BmQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Minaev_G\\source\\repos\\krsch\\mobileClient\\mobileClient\\DataLib\\DataLib.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Minaev_G\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Minaev_G\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.0.4\\sqlitepclraw.provider.e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
   ],
   "logs": []
 }

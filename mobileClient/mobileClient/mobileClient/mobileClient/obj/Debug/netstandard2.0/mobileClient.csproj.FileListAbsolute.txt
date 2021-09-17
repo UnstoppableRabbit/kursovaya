@@ -17,3 +17,4 @@ C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobi
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\obj\Debug\netstandard2.0\mobileClient.csproj.AssemblyReference.cache
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\obj\Debug\netstandard2.0\mobileClient.csproj.CopyComplete
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\obj\Debug\netstandard2.0\Views\KkalCalculatorPage.xaml.g.cs
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\bin\Debug\netstandard2.0\Sqlite\products

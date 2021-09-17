@@ -30,17 +30,41 @@
     <AppXManifest Include="C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-09-14T14:00:31.729</Modified>
+      <Modified>2021-09-17T13:19:00.851</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\mobileClient.UWP.exe">
       <PackagePath>entrypoint\mobileClient.UWP.exe</PackagePath>
-      <Modified>2021-09-14T14:00:30.732</Modified>
+      <Modified>2021-09-17T13:18:59.730</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.12\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
       <Modified>2021-02-04T22:15:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Minaev_G\.nuget\packages\sqlite-net-pcl\1.8.116\lib\netstandard2.0\SQLite-net.dll">
+      <PackagePath>SQLite-net.dll</PackagePath>
+      <Modified>2021-09-02T21:04:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Minaev_G\.nuget\packages\sqlitepclraw.bundle_green\2.0.4\lib\netstandard2.0\SQLitePCLRaw.batteries_v2.dll">
+      <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
+      <Modified>2020-09-03T17:13:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Minaev_G\.nuget\packages\sqlitepclraw.core\2.0.4\lib\netstandard2.0\SQLitePCLRaw.core.dll">
+      <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
+      <Modified>2020-09-03T17:13:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Minaev_G\.nuget\packages\sqlitepclraw.lib.e_sqlite3\2.0.4\runtimes\win10-x86\nativeassets\uap10.0\e_sqlite3.dll">
+      <PackagePath>e_sqlite3.dll</PackagePath>
+      <Modified>2020-08-17T14:38:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Minaev_G\.nuget\packages\sqlitepclraw.provider.e_sqlite3\2.0.4\lib\uap10.0\SQLitePCLRaw.provider.e_sqlite3.dll">
+      <PackagePath>SQLitePCLRaw.provider.e_sqlite3.dll</PackagePath>
+      <Modified>2020-09-03T17:13:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Minaev_G\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+      <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
+      <Modified>2018-09-18T19:38:10.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Minaev_G\.nuget\packages\win2d.uwp\1.20.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
@@ -68,11 +92,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\bin\Debug\netstandard2.0\mobileClient.dll">
       <PackagePath>mobileClient.dll</PackagePath>
-      <Modified>2021-09-14T14:00:24.021</Modified>
+      <Modified>2021-09-17T13:30:11.430</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\bin\Debug\netstandard2.0\DataLib.dll">
       <PackagePath>DataLib.dll</PackagePath>
-      <Modified>2021-09-13T11:37:14.758</Modified>
+      <Modified>2021-09-17T13:27:17.026</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Minaev_G\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -85,6 +109,10 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft\Xamarin\NuGet\xamarin.forms\5.0.0.2012\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
       <Modified>2021-02-12T01:08:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\DataLib\Sqlite\products">
+      <PackagePath>Sqlite\products</PackagePath>
+      <Modified>2021-09-17T13:27:06.544</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\calculator_logo.png">
       <PackagePath>calculator_logo.png</PackagePath>
@@ -247,11 +275,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-09-14T14:00:30.659</Modified>
+      <Modified>2021-09-17T13:18:59.651</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-09-14T14:00:30.659</Modified>
+      <Modified>2021-09-17T13:18:59.651</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -271,7 +299,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\Core\mobileClient.UWP.exe">
       <PackagePath>mobileClient.UWP.exe</PackagePath>
-      <Modified>2021-09-14T14:00:31.724</Modified>
+      <Modified>2021-09-17T13:19:00.844</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

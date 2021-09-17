@@ -50,7 +50,8 @@
                             <RowDefinition Height="400"></RowDefinition>
                         </Grid.RowDefinitions>
                         <ListView 
-                        ItemsSource="{Binding ProductList}">
+                        ItemsSource="{Binding ProductList}"
+                        SelectedItem="{Binding CurrentProduct}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -78,9 +79,10 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Button Grid.Column="0" Margin="10,10,50,0" Text="Удалить"
-                                Command="{Binding ClearProductCommand}"
+                                Command="{Binding DeleteCurrentCommand}"
                                 BackgroundColor="{StaticResource Primary}"
-                                TextColor="White" />
+                                TextColor="White" 
+                                IsEnabled="{Binding CanDeleteCurrent}"/>
                         <Button Grid.Column="1" Margin="50,10,10,0" Text="Очистить все"
                                 Command="{Binding ClearProductCommand}"
                                 BackgroundColor="{StaticResource Primary}"

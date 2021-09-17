@@ -63,3 +63,10 @@ C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobi
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637424707200000000.json
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\DataLib.dll
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\DataLib.pdb
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\Sqlite\products
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\SQLite-net.dll
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\SQLitePCLRaw.core.dll
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\e_sqlite3.dll
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient.UWP\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll

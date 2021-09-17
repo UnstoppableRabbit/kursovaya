@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DataLib.Sqlite.Model;
+﻿using DataLib.Sqlite.Model;
 
 namespace mobileClient.Models
 {
     public class ProductListElement
     {
-        private Product _product;
+        private readonly Product _product;
         public ProductListElement(Product product, double weight)
         {
             _product = product;

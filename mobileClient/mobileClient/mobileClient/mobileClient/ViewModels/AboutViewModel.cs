@@ -1,4 +1,6 @@
 ﻿using System.Windows.Input;
+using DataLib.Sqlite;
+using DataLib.Sqlite.Model;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
