@@ -5,6 +5,7 @@ using DataLib.Sqlite;
 using DataLib.Sqlite.Cache;
 using DataLib.Sqlite.Model;
 using mobileClient.Models;
+using mobileClient.Views;
 using Xamarin.Forms;
 
 namespace mobileClient.ViewModels
@@ -20,6 +21,11 @@ namespace mobileClient.ViewModels
         private bool _canClear;
 
         public KkalCalculatorViewModel()
+        {
+            Refresh();
+        }
+
+        public void Refresh()
         {
             Products = new ObservableCollection<Product>(ProductContext.Database.GetItems());
             ProductList = new ObservableCollection<ProductListElement>();
@@ -105,6 +111,16 @@ namespace mobileClient.ViewModels
                 ClearView();
             });
 
+        public ICommand AddItemCommand =>
+            new Command(OnAddItem);
+
+        private async void OnAddItem(object obj)
+        {
+            await Shell.Current.GoToAsync(nameof(NewProductPage));
+        }
+
+        public ICommand RefreshCommand =>
+            new Command(Refresh);
         private void ClearView()
         {
             TotalCalories = ProductList.Sum(_ => _.TotalCalories);

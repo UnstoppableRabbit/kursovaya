@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using DataLib.Sqlite.Model;
 using SQLite;
@@ -33,6 +34,10 @@ namespace DataLib.Sqlite
                 throw new Exception("Id = 0");
             }
             return database.Insert(item);
+        }
+        public int NewId()
+        {
+            return GetItems().Max(_ => _.Id) + 1;
         }
     }
 }

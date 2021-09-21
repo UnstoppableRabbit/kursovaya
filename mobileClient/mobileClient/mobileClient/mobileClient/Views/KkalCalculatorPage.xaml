@@ -6,17 +6,21 @@
              Title="Калькулятор калорий"
              Disappearing="KkalCalculatorPage_OnDisappearing">
 
+    
     <ContentPage.BindingContext>
         <vm:KkalCalculatorViewModel />
     </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#e1bee7</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-
-    <ContentPage.Content>
+    <RefreshView Command="{Binding }">
         <Grid BackgroundColor="{StaticResource Accent}">
             <ScrollView>
                 <StackLayout>
@@ -98,5 +102,5 @@
                 </StackLayout>
             </ScrollView>
         </Grid>
-    </ContentPage.Content>
+    </RefreshView>
 </ContentPage>

@@ -1,11 +1,14 @@
-﻿namespace mobileClient
+﻿using mobileClient.Views;
+using Xamarin.Forms;
+
+namespace mobileClient
 {
     public partial class AppShell
     {
         public AppShell()
         {
             InitializeComponent();
-            //Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
+            Routing.RegisterRoute(nameof(NewProductPage), typeof(NewProductPage));
             //Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 
