@@ -8,7 +8,7 @@ namespace DataLib.Sqlite
 {
     public class ProductRepository
     {
-        SQLiteConnection database;
+        private readonly SQLiteConnection database;
         public ProductRepository(string databasePath)
         {
             database = new SQLiteConnection(databasePath);

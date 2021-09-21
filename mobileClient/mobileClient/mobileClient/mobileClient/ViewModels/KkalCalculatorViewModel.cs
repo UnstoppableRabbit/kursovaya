@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Input;
 using DataLib.Sqlite;
+using DataLib.Sqlite.Cache;
 using DataLib.Sqlite.Model;
 using mobileClient.Models;
 using Xamarin.Forms;
@@ -22,7 +23,10 @@ namespace mobileClient.ViewModels
         {
             Products = new ObservableCollection<Product>(ProductContext.Database.GetItems());
             ProductList = new ObservableCollection<ProductListElement>();
-
+            foreach (var cacheElem in CacheContext.Cache.GetItems())
+            {
+                ProductList.Add(new ProductListElement(Products.First(_ => _.Id.Equals(cacheElem.ProductId)), cacheElem.Weight));
+            }
             ClearView();
         }
 
@@ -36,7 +40,7 @@ namespace mobileClient.ViewModels
         public ObservableCollection<ProductListElement> ProductList { get; set; }
 
         public Product SelectedProduct
-        {
+        { 
             get => _selectedProduct;
             set
             {

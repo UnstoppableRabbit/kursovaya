@@ -11,6 +11,7 @@ namespace mobileClient.Models
             Weight = weight;
         }
 
+        public int Id => _product.Id;
         public string Name => _product.Name;
         public double Calories => _product.Calories;
         public double Weight { get; set; }

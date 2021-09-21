@@ -29,15 +29,15 @@
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Лучшее приложение для фитнеса" FontSize="Title"/>
-                <Label Text="Ваше имя" FontSize="16" Padding="0,0,0,0"/>
-                <Label Text="Ваша фамилия" FontSize="16" Padding="0,0,0,0"/>
-                <Label Text="Ваше что-то еще" FontSize="16" Padding="0,0,0,0"/>
-                <Label FontSize="16" Padding="0,24,0,0">
+                <Label TextColor="Black" Text="Лучшее приложение для фитнеса" FontSize="Title"/>
+                <Label TextColor="Black" Text="Ваше имя" FontSize="16" Padding="0,0,0,0"/>
+                <Label TextColor="Black" Text="Ваша фамилия" FontSize="16" Padding="0,0,0,0"/>
+                <Label TextColor="Black" Text="Ваше что-то еще" FontSize="16" Padding="0,0,0,0"/>
+                <Label TextColor="Black" FontSize="16" Padding="0,24,0,0">
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="Пользуемся не стесняемся"/>
+                                <Span TextColor="Black" Text="Пользуемся не стесняемся"/>
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>

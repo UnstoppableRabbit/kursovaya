@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BwncDTB5haVTvWTfo2dGM63yvycVbdUWeW/YuMLM5r4LPg6fODhpbireckA8WFp6JG0LUxnhFVhsTsqpJaAl7w==",
+  "dgSpecHash": "0hmuQsq+9yCqiFbCbFVB3qonzn95XueFM4Dh68Qe7opqIgmTvq4RZca5kPqyVuHxAbyndg6rbeb68gSabcFgfw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Minaev_G\\source\\repos\\krsch\\mobileClient\\mobileClient\\mobileClient\\mobileClient.Android\\mobileClient.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Minaev_G\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
     "C:\\Users\\Minaev_G\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
     "C:\\Users\\Minaev_G\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
