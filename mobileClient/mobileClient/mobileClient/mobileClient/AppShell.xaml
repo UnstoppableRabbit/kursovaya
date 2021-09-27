@@ -84,7 +84,9 @@
     <FlyoutItem Title="Калькулятор калорий" Icon="calculator_logo.png">
         <ShellContent Route="KkalCalculator" ContentTemplate="{DataTemplate local:KkalCalculatorPage}" />
     </FlyoutItem>
-
+    <FlyoutItem Title="Дневная норма калорий" Icon="icon_body.png">
+        <ShellContent Route="DayNorm" ContentTemplate="{DataTemplate local:DayNorm}" />
+    </FlyoutItem>
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <!--<MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem>-->

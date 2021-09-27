@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobileClient.Views.DayNorm"
+             xmlns:vm="clr-namespace:mobileClient.ViewModels"
+             Title="Норма калорий"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:DayNormViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#ce93d8</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="DarkOrchid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Label Text="Расчет дневной нормы калорий" FontSize="22" TextColor="White"></Label>
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+                <Label Text="Ваш пол:" HorizontalOptions="Center" FontSize="25"></Label>
+                <StackLayout Margin="10,0" Orientation="Horizontal">
+                    <RadioButton IsChecked="{Binding Path=IsMan, Mode=TwoWay}" HorizontalOptions="Start" Content="Мужской" TextColor="White"></RadioButton>
+                    <RadioButton IsChecked="{Binding Path=IsWoman, Mode=TwoWay}" Margin="20,0,0,0" HorizontalOptions="EndAndExpand"  Content="Женский" TextColor="White"></RadioButton>
+                </StackLayout>
+                <Label TextColor="White" HorizontalOptions="Center" Text="Ваш возраст:" FontSize="25" Margin="0,30,0,10"></Label>
+                <Entry TextColor="White" Text="{Binding Age}" HorizontalTextAlignment="Center" Keyboard="Numeric"></Entry>
+                <Label TextColor="White" HorizontalOptions="Center" Text="Ваш вес:" FontSize="25" Margin="0,30,0,10"></Label>
+                <Entry TextColor="White" Text="{Binding Weight}" HorizontalTextAlignment="Center" Keyboard="Numeric"></Entry>
+                <Label TextColor="White" HorizontalOptions="Center" Text="Ваш рост:" FontSize="25" Margin="0,30,0,10"></Label>
+                <Entry TextColor="White" Text="{Binding Height}" HorizontalTextAlignment="Center" Keyboard="Numeric"></Entry>
+                <ScrollView>
+                    <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                        <Button Margin="0,10,0,0" Text="Рассчитать"
+                                BackgroundColor="{StaticResource Primary}"
+                                TextColor="White"
+                                Command="{Binding Path=CalcCommand}"/>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

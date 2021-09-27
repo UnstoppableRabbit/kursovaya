@@ -27,11 +27,30 @@ namespace mobileClient.ViewModels
 
         public void Refresh()
         {
-            Products = new ObservableCollection<Product>(ProductContext.Database.GetItems());
-            ProductList = new ObservableCollection<ProductListElement>();
-            foreach (var cacheElem in CacheContext.Cache.GetItems())
+            if (Products == null)
+                Products = new ObservableCollection<Product>(ProductContext.Database.GetItems());
+            else
             {
-                ProductList.Add(new ProductListElement(Products.First(_ => _.Id.Equals(cacheElem.ProductId)), cacheElem.Weight));
+                Products.Clear();
+
+                foreach (var product in ProductContext.Database.GetItems())
+                {
+                    Products.Add(product);
+                }
+            }
+
+            if (ProductList == null)
+            {
+                ProductList = new ObservableCollection<ProductListElement>();
+            }
+            else
+            {
+                ProductList.Clear();
+           
+                foreach (var cacheElem in CacheContext.Cache.GetItems())
+                {
+                    ProductList.Add(new ProductListElement(Products.First(_ => _.Id.Equals(cacheElem.ProductId)), cacheElem.Weight));
+                }
             }
             ClearView();
         }

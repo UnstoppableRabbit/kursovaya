@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using DataLib.Sqlite;
 using DataLib.Sqlite.Model;
 using Xamarin.Forms;

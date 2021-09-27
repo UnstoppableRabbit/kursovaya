@@ -20,8 +20,8 @@
             <Color x:Key="Accent">#e1bee7</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <RefreshView Command="{Binding }">
-        <Grid BackgroundColor="{StaticResource Accent}">
+    <RefreshView Command="{Binding}">
+        <Grid BackgroundColor="White">
             <ScrollView>
                 <StackLayout>
                     <Grid>
@@ -29,8 +29,8 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Picker TextColor="Black"
-                                ItemsSource="{Binding Products}"
+                        <Picker TextColor="Black" TitleColor="Black"
+                                ItemsSource="{Binding Products, Mode=TwoWay}"
                                 SelectedItem="{Binding SelectedProduct}"
                                 Title="Выберите продукт"
                                 FontSize="15"
