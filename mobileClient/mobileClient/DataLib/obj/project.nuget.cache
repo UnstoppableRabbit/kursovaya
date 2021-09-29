@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "q0TJnbxCmYitXvDC6Czvhq4UN9QQ3PIAKsxlh8k+mbc/Wo8fGae9aWEsR4dlpXZgBejCTBg3XLNYl6upkw6BmQ==",
+  "dgSpecHash": "FWgh4R1ilrCFia/h/FdwnsXO+YshFDXl518FtpYdrojINnwuYyY/5DFSUNJjwEC03J0cs74+rMhY+Jzg/dVcgg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Minaev_G\\source\\repos\\krsch\\mobileClient\\mobileClient\\DataLib\\DataLib.csproj",
   "expectedPackageFiles": [
@@ -13,8 +13,9 @@
     "C:\\Users\\Minaev_G\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.0.4\\sqlitepclraw.provider.e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\Minaev_G\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
     "C:\\Users\\Minaev_G\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
-    "C:\\Users\\Minaev_G\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
-    "C:\\Users\\Minaev_G\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512"
   ],
   "logs": []
 }

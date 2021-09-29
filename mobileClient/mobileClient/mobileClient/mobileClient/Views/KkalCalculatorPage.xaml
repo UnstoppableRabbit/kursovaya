@@ -6,7 +6,6 @@
              Title="Калькулятор калорий"
              Disappearing="KkalCalculatorPage_OnDisappearing">
 
-    
     <ContentPage.BindingContext>
         <vm:KkalCalculatorViewModel />
     </ContentPage.BindingContext>
@@ -20,8 +19,7 @@
             <Color x:Key="Accent">#e1bee7</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <RefreshView Command="{Binding}">
-        <Grid BackgroundColor="White">
+    <Grid BackgroundColor="White">
             <ScrollView>
                 <StackLayout>
                     <Grid>
@@ -57,9 +55,10 @@
                         </Grid.RowDefinitions>
                         <ListView
                             x:Name="ProductList"
-                        ItemsSource="{Binding ProductList}"
-                        SelectedItem="{Binding CurrentProduct}"
-                            RowHeight="90">
+                            ItemsSource="{Binding ProductList}"
+                            SelectedItem="{Binding CurrentProduct}"
+                            RowHeight="90"
+                            SeparatorVisibility="None">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -102,5 +101,4 @@
                 </StackLayout>
             </ScrollView>
         </Grid>
-    </RefreshView>
 </ContentPage>

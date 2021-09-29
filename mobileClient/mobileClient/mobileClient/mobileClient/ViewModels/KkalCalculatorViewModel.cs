@@ -28,12 +28,12 @@ namespace mobileClient.ViewModels
         public void Refresh()
         {
             if (Products == null)
-                Products = new ObservableCollection<Product>(ProductContext.Database.GetItems());
+                Products = new ObservableCollection<Product>(ProductContext.Products.GetItems());
             else
             {
                 Products.Clear();
 
-                foreach (var product in ProductContext.Database.GetItems())
+                foreach (var product in ProductContext.Products.GetItems())
                 {
                     Products.Add(product);
                 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kg3cVmDYtPdbnvXHLxRh2bKSJ88Fv+vHz3gkRUVsgObtcXsL7sXdLxl+REjSmfBKIU6LmxBJ2mecNa8P9h8+Dw==",
+  "dgSpecHash": "buyNS9FyjPb9jqXti2E2TcE6sVxayPNu0+Qf6idj2+rBiNj7fu+Ce5JpmhlQnx7iQ81ApNyOiFj1Sbe9NGIxnA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Minaev_G\\source\\repos\\krsch\\mobileClient\\mobileClient\\mobileClient\\mobileClient\\mobileClient.csproj",
   "expectedPackageFiles": [
@@ -16,8 +16,8 @@
     "C:\\Users\\Minaev_G\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\Minaev_G\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Minaev_G\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Minaev_G\\.nuget\\packages\\xamarin.forms\\5.0.0.2125\\xamarin.forms.5.0.0.2125.nupkg.sha512"
   ],
   "logs": []
 }

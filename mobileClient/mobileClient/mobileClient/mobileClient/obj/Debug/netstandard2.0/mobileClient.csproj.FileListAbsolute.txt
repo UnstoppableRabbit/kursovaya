@@ -22,3 +22,4 @@ C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobi
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\bin\Debug\netstandard2.0\Mono.Android.xml
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\obj\Debug\netstandard2.0\Views\NewProductPage.xaml.g.cs
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\obj\Debug\netstandard2.0\Views\DayNorm.xaml.g.cs
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\obj\Debug\netstandard2.0\Views\TrainigPage.xaml.g.cs

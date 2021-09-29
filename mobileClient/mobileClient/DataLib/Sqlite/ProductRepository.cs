@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using DataLib.Sqlite.Model;
 using SQLite;
 
@@ -31,7 +29,7 @@ namespace DataLib.Sqlite
         {
             if (item.Id == 0)
             {
-                throw new Exception("Id = 0");
+                item.Id = NewId();
             }
             return database.Insert(item);
         }

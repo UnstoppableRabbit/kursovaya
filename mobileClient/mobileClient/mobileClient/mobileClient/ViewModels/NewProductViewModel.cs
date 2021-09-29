@@ -41,7 +41,7 @@ namespace mobileClient.ViewModels
         public ICommand AddProductCommand =>
             new Command(() =>
             {
-                ProductContext.Database.SaveItem(new Product { Id = ProductContext.Database.NewId(), Calories = (double)this.Calories / 100.0, Name = this.Name});
+                ProductContext.Products.SaveItem(new Product { Id = ProductContext.Products.NewId(), Calories = (double)this.Calories / 100.0, Name = this.Name});
                 Calories = 0;
                 Name = null;
             });
