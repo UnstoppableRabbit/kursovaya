@@ -9,6 +9,7 @@ namespace mobileClient
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(NewProductPage), typeof(NewProductPage));
+            Routing.RegisterRoute(nameof(AddTimeTraining), typeof(AddTimeTraining));
             //Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 

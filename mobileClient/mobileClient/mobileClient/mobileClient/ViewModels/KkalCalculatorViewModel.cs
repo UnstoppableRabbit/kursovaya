@@ -46,10 +46,12 @@ namespace mobileClient.ViewModels
             else
             {
                 ProductList.Clear();
-           
+
                 foreach (var cacheElem in CacheContext.Cache.GetItems())
                 {
-                    ProductList.Add(new ProductListElement(Products.First(_ => _.Id.Equals(cacheElem.ProductId)), cacheElem.Weight));
+                    var k = Products.FirstOrDefault(_ => _.Id.Equals(cacheElem.ProductId));
+                    if (k != null)
+                        ProductList.Add(new ProductListElement(k, cacheElem.Weight));
                 }
             }
             ClearView();

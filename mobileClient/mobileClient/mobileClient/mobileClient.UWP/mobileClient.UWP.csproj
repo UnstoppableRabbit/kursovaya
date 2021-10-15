@@ -104,10 +104,12 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="begaet.png" />
     <Content Include="calculator_logo.png" />
     <Content Include="icon_gantel.png" />
     <Content Include="icon_home.png" />
     <Content Include="icon_body.png" />
+    <Content Include="kachaetsa.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />

@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 using DataLib.Sqlite;
 using DataLib.Sqlite.Model;
 using Xamarin.Forms;
@@ -10,7 +11,15 @@ namespace mobileClient.ViewModels
         private int _calories;
         private string _name;
         private bool _canAdd;
+        private bool _canDelete;
+        private Product _deleted;
 
+        public NewProductViewModel()
+        {
+            AllProducts = new ObservableCollection<Product>(ProductContext.Products.GetItems());
+        }
+
+        public ObservableCollection<Product> AllProducts { get; set; }
         public int Calories
         {
             get => _calories;
@@ -20,7 +29,6 @@ namespace mobileClient.ViewModels
                 CanAddCheck();
             }
         }
-
         public string Name
         {
             get => _name;
@@ -31,7 +39,18 @@ namespace mobileClient.ViewModels
             }
         }
 
+        public Product Deleted
+        {
+            get => _deleted;
+            set
+            {
+                SetProperty(ref _deleted, value);
+                CanDelete = value != null && value.Id > 0;
+            }
+        }
+
         public bool CanAdd { get => _canAdd; set => SetProperty(ref _canAdd, value); }
+        public bool CanDelete { get => _canDelete; set => SetProperty(ref _canDelete, value); }
 
         private void CanAddCheck()
         {
@@ -41,9 +60,22 @@ namespace mobileClient.ViewModels
         public ICommand AddProductCommand =>
             new Command(() =>
             {
-                ProductContext.Products.SaveItem(new Product { Id = ProductContext.Products.NewId(), Calories = (double)this.Calories / 100.0, Name = this.Name});
+                var np = new Product
+                    { Id = ProductContext.Products.NewId(), Calories = (double) this.Calories / 100.0, Name = this.Name };
+                ProductContext.Products.SaveItem(np);
+                AllProducts.Add(np);
                 Calories = 0;
                 Name = null;
+                CanAddCheck();
+            });
+
+        public ICommand DeleteProductCommand =>
+            new Command(() =>
+            {
+                ProductContext.Products.DeleteItem(Deleted.Id);
+                AllProducts.Remove(Deleted);
+                Deleted = null;
+                CanDelete = false;
             });
     }
 }

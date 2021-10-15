@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:mobileClient.ViewModels;assembly=mobileClient"
-             x:Class="mobileClient.Views.NewProductPage">
+             x:Class="mobileClient.Views.NewProductPage"
+             Title="Изменение базы продуктов">
 
     <ContentPage.BindingContext>
         <vm:NewProductViewModel/>
@@ -10,11 +11,16 @@
 
     <ContentPage.Content>
         <StackLayout BackgroundColor="#ce93d8">
-            <Label HorizontalTextAlignment="Center" TextColor="White" FontSize="22">Название продукта</Label>
+            <Label HorizontalTextAlignment="Center" Margin="0,50,0,0" TextColor="White" FontSize="22">Название продукта</Label>
             <Entry Margin="15,0" HorizontalTextAlignment="Center" Text="{Binding Name}" TextColor="White" FontSize="22"></Entry>
             <Label Margin="0,100,0,0" HorizontalTextAlignment="Center" TextColor="White" FontSize="22">Калорийность на 100 грамм</Label>
             <Entry Margin="15,0" HorizontalTextAlignment="Center" Text="{Binding Calories}" TextColor="White" FontSize="22"></Entry>
             <Button Command="{Binding AddProductCommand}" Text="Добавить" Margin="20" IsEnabled="{Binding CanAdd}"></Button>
+            
+            <Label HorizontalTextAlignment="Center" Margin="0,50,0,0" TextColor="White" FontSize="30">Удаление продукта</Label>
+            <Picker ItemDisplayBinding="{Binding Name}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" TitleColor="White" Title="Выберите продукт" SelectedItem="{Binding Deleted}" ItemsSource="{Binding AllProducts}">
+            </Picker>
+            <Button Command="{Binding DeleteProductCommand}" Text="Удалить" Margin="20" IsEnabled="{Binding CanDelete}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

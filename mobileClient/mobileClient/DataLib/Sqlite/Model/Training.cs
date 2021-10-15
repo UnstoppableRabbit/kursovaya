@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
+﻿using System.ComponentModel;
 using SQLite;
 
 namespace DataLib.Sqlite.Model
@@ -9,6 +6,7 @@ namespace DataLib.Sqlite.Model
     [Table("Training")]
     public class Training
     {
+        [PrimaryKey]
         public int Id { get; set; }
         public string Name { get; set; }
         public bool IsRepeated { get; set; }
