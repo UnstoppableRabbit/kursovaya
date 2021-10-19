@@ -6,9 +6,19 @@
         <StackLayout>
             <Label Text="{Binding Type}"
                    TextColor="Black"
-                   VerticalOptions="CenterAndExpand" 
+                   VerticalOptions="StartAndExpand"
                    HorizontalOptions="CenterAndExpand" />
-
+            <ListView ItemsSource="{Binding Trainings}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Label TextColor="Black" Text="{Binding Name}" FontSize="21" />
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

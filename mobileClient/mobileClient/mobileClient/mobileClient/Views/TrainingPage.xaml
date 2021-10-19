@@ -35,17 +35,6 @@
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
         </CarouselView>
-        <ListView Grid.Row="1" ItemsSource="{Binding TrainingList}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <Label TextColor="Black" Text="{Binding Name}" FontSize="18" />
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
     </Grid>
 
 </ContentPage>
