@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using DataLib.Sqlite.Model;
 using SQLite;
 
@@ -37,6 +35,8 @@ namespace DataLib.Sqlite
         }
         public int NewId()
         {
+            if (!GetItems().Any())
+                return 1;
             return GetItems().Max(_ => _.Id) + 1;
         }
     }

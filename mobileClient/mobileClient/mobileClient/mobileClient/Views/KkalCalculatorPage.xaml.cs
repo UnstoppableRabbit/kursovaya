@@ -25,11 +25,11 @@ namespace mobileClient.Views
 
         private void KkalCalculatorPage_OnDisappearing(object sender, EventArgs e)
         {
-            CacheContext.Cache.DeleteCache();
+            CacheContext.CalculatorCache.DeleteCache();
             int id = 1;
             foreach (var prElem in ProductList.ItemsSource)
             {
-                CacheContext.Cache.SaveItem(new CalculatorCache { Id = id, Weight = ((ProductListElement)prElem).Weight, ProductId = ((ProductListElement)prElem).Id });
+                CacheContext.CalculatorCache.SaveItem(new CalculatorCache { Id = id, Weight = ((ProductListElement)prElem).Weight, ProductId = ((ProductListElement)prElem).Id });
                 id++;
             }
         }

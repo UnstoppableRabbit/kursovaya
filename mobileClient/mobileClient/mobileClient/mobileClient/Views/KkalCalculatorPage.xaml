@@ -36,7 +36,7 @@
                         </Picker>
                         <StackLayout Grid.Column="1">
                             <Label TextColor="Black" Text="масса (грамм)"></Label>
-                            <Entry TextColor="Black" Keyboard="Numeric" Text="{Binding SelectedWeight}"></Entry>
+                            <Entry TextColor="Black" Keyboard="Numeric" Text="{Binding SelectedWeight, UpdateSourceEventName=PropertyChanged}"></Entry>
                         </StackLayout>
                     </Grid>
                     <Button Margin="10,10,10,0" Text="Добавить"

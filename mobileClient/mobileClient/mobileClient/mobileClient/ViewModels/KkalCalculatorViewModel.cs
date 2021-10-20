@@ -47,7 +47,7 @@ namespace mobileClient.ViewModels
             {
                 ProductList.Clear();
 
-                foreach (var cacheElem in CacheContext.Cache.GetItems())
+                foreach (var cacheElem in CacheContext.CalculatorCache.GetItems())
                 {
                     var k = Products.FirstOrDefault(_ => _.Id.Equals(cacheElem.ProductId));
                     if (k != null)
@@ -72,7 +72,7 @@ namespace mobileClient.ViewModels
             set
             {
                 SetProperty(ref _selectedProduct, value);
-                CanAddProduct = true;
+                CanAddProduct = SelectedProduct != null && SelectedWeight > 0;
             }
         }
 
@@ -90,7 +90,11 @@ namespace mobileClient.ViewModels
         public int SelectedWeight
         {
             get => _selectedWeight ;
-            set => SetProperty(ref _selectedWeight, value);
+            set
+            {
+                SetProperty(ref _selectedWeight, value);
+                CanAddProduct = SelectedProduct != null && SelectedWeight > 0;
+            }
         }
 
         public bool CanAddProduct

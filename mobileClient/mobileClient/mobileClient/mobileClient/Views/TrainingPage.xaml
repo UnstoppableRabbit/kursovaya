@@ -15,8 +15,9 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="400"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
         </Grid.RowDefinitions>
         <CarouselView ItemsSource="{Binding CarouselElements}" x:Name="CarouselZoos">
                 <CarouselView.ItemTemplate>
@@ -35,6 +36,41 @@
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
         </CarouselView>
+        <ListView Grid.Row="1" RowHeight="60" ItemsSource="{Binding TrainingList}" SelectedItem="{Binding SelectedItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label TextColor="Black" Text="{Binding Name}" FontSize="21" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label TextColor="Black" Text="{Binding Measurement}"></Label>
+                                    <Label TextColor="Black" Margin="10,0,0,0" Text="Сожжено каллорий:"></Label>
+                                    <Label TextColor="Black" Text="{Binding Calories}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="10,10,50,0" Text="Удалить"
+                                Command="{Binding DeleteCurrentCommand}"
+                                BackgroundColor="{StaticResource Primary}"
+                                TextColor="White" 
+                                FontSize="15"
+                                IsEnabled="{Binding CanDelete}"/>
+            <Button Grid.Column="1" Margin="50,10,10,0" Text="Очистить"
+                                Command="{Binding ClearProductCommand}"
+                                BackgroundColor="{StaticResource Primary}"
+                                TextColor="White"
+                                FontSize="15"
+                                IsEnabled="{Binding CanClear}"/>
+        </Grid>
     </Grid>
-
 </ContentPage>

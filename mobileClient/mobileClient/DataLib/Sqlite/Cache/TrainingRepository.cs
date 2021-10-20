@@ -1,38 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using DataLib.Sqlite.Model;
 using SQLite;
 
 namespace DataLib.Sqlite.Cache
 {
-    public class CacheRepository
+    public class TrainingRepository
     {
         private readonly SQLiteConnection cache;
-        public CacheRepository(string databasePath)
+        public TrainingRepository(string databasePath)
         {
             cache = new SQLiteConnection(databasePath);
-            cache.CreateTable<CalculatorCache>();
+            cache.CreateTable<TrainingCache>();
         }
-        public IEnumerable<CalculatorCache> GetItems()
+        public IEnumerable<TrainingCache> GetItems()
         {
-            return cache.Table<CalculatorCache>().ToList();
+            return cache.Table<TrainingCache>().ToList();
         }
-        public CalculatorCache GetItem(int id)
+        public TrainingCache GetItem(int id)
         {
-            return cache.Get<CalculatorCache>(id);
+            return cache.Get<TrainingCache>(id);
         }
         public int DeleteItem(int id)
         {
-            return cache.Delete<CalculatorCache>(id);
+            return cache.Delete<TrainingCache>(id);
         }
         public int DeleteCache()
         {
-            return cache.DeleteAll<CalculatorCache>();
+            return cache.DeleteAll<TrainingCache>();
         }
 
-        public int SaveItem(CalculatorCache item)
+        public int SaveItem(TrainingCache item)
         {
             if (item.Id == 0)
             {

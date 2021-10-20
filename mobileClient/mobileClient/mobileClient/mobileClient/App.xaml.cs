@@ -28,10 +28,10 @@ namespace mobileClient
             {
                 ProductContext.Trainings.SaveItem(new Training { Id = 1, Name = "Отжимание", IsRepeated = true, Calories = 0.1 });
                 ProductContext.Trainings.SaveItem(new Training { Id = 2, Name = "Приседание", IsRepeated = true, Calories = 0.35 });
-                ProductContext.Trainings.SaveItem(new Training { Id = 3, Name = "Бег 8 км/ч", IsRepeated = false, Calories = 11 / 60 });
-                ProductContext.Trainings.SaveItem(new Training { Id = 4, Name = "Бег 10 км/ч", IsRepeated = false, Calories = 13 / 60 });
-                ProductContext.Trainings.SaveItem(new Training { Id = 5, Name = "Бег 15 км/ч", IsRepeated = false, Calories = 18 / 60 });
-                ProductContext.Trainings.SaveItem(new Training { Id = 6, Name = "Ходьба", IsRepeated = false, Calories = 5 / 60 });
+                ProductContext.Trainings.SaveItem(new Training { Id = 3, Name = "Бег 8 км/ч", IsRepeated = false, Calories = 11 / 60.0 });
+                ProductContext.Trainings.SaveItem(new Training { Id = 4, Name = "Бег 10 км/ч", IsRepeated = false, Calories = 13 / 60.0 });
+                ProductContext.Trainings.SaveItem(new Training { Id = 5, Name = "Бег 15 км/ч", IsRepeated = false, Calories = 18 / 60.0 });
+                ProductContext.Trainings.SaveItem(new Training { Id = 6, Name = "Ходьба", IsRepeated = false, Calories = 5 / 60.0 });
             }
         }
 

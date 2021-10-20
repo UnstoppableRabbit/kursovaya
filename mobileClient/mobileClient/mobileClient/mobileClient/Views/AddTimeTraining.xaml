@@ -3,22 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mobileClient.Views.AddTimeTraining">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Type}"
-                   TextColor="Black"
-                   VerticalOptions="StartAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-            <ListView ItemsSource="{Binding Trainings}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <Label TextColor="Black" Text="{Binding Name}" FontSize="21" />
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <ScrollView>
+            <Grid BackgroundColor="#ce93d8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="530"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                </Grid.RowDefinitions>
+                <SearchBar x:Name="SearchBar" 
+                           Placeholder="Поиск" 
+                           SearchCommand="{Binding SearchCommand, UpdateSourceEventName = TextChanged}" 
+                           SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}"
+                           Text="{Binding SearchText, Mode=TwoWay}"
+                           BackgroundColor="{StaticResource Primary}">
+                </SearchBar>
+                <ListView Grid.Row="1" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding Trainings, Mode = TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Label Text="{Binding Name}" FontSize="21" />
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout Grid.Row="2">
+                <Entry Placeholder="{Binding PlaceholderText}" Keyboard="Numeric" Text="{Binding Points}" HorizontalTextAlignment="Center"></Entry>
+                <Button Text="Добавить"
+                        IsEnabled="{Binding IsButtonEnabled}"
+                        Margin="10,10,10,0" 
+                        BackgroundColor="{StaticResource Primary}"
+                        Command="{Binding AddCommand}"
+                        TextColor="White"
+                ></Button>
+            </StackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

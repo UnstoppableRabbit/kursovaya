@@ -35,6 +35,8 @@ namespace DataLib.Sqlite
         }
         public int NewId()
         {
+            if (!GetItems().Any())
+                return 1;
             return GetItems().Max(_ => _.Id) + 1;
         }
     }
