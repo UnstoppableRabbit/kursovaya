@@ -147,6 +147,7 @@ namespace mobileClient.ViewModels
                         Trainings.Add(tr);
                     }
                 }
+                OnPropertyChanged(nameof(PlaceholderText));
             }
             catch
             {

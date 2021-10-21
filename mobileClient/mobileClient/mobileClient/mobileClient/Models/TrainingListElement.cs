@@ -19,7 +19,7 @@ namespace mobileClient.Models
         public string Name => training.Name;
         public bool IsRepeated => training.IsRepeated;
         public string Measurement => IsRepeated ? $"{Repeat} повторений;" : $"{Seconds} секунд;";
-        public double Calories => IsRepeated ? training.Calories * Repeat : training.Calories * 60.0 * Seconds;
+        public double Calories => IsRepeated ? training.Calories * Repeat : (training.Calories / 60.0) * Seconds;
         public int Repeat { get; set; }
         public int Seconds { get; set; }
 

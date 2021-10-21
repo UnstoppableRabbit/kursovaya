@@ -3,3 +3,9 @@
 ################################################################################
 
 /mobileClient/mobileClient/mobileClient/mobileClient/bin
+/mobileClient/mobileClient/mobileClient/mobileClient.Android/bin
+/mobileClient/mobileClient/mobileClient/mobileClient.Android/obj
+/mobileClient/mobileClient/mobileClient/mobileClient.UWP/bin/x86/Release
+/mobileClient/mobileClient/mobileClient/mobileClient.UWP/obj/x86/Release
+/WebServices/FitsennWebApi/FitsennWebApi/bin/Debug/netcoreapp3.1
+/WebServices/FitsennWebApi/FitsennWebApi/obj

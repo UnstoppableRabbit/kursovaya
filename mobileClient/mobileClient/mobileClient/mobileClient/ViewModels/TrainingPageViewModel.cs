@@ -46,6 +46,7 @@ namespace mobileClient.ViewModels
             {
                 TrainingList.Add(el);
             }
+            OnPropertyChanged(nameof(CanClear));
         }
         public ICommand ClearProductCommand =>
             new Command(() =>

@@ -17,12 +17,12 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <Grid BackgroundColor="DarkOrchid">
+        <Grid BackgroundColor="{StaticResource Accent}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout BackgroundColor="DarkOrchid" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                     <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
                         <Label Text="Расчет дневной нормы калорий" FontSize="22" TextColor="White"></Label>
@@ -30,7 +30,7 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout Grid.Row="1">
-                <Label Text="Ваш пол:" HorizontalOptions="Center" FontSize="25"></Label>
+                <Label TextColor="White" Text="Ваш пол:" HorizontalOptions="Center" FontSize="25"></Label>
                 <StackLayout Margin="10,0" Orientation="Horizontal">
                     <RadioButton IsChecked="{Binding Path=IsMan, Mode=TwoWay}" HorizontalOptions="Start" Content="Мужской" TextColor="White"></RadioButton>
                     <RadioButton IsChecked="{Binding Path=IsWoman, Mode=TwoWay}" Margin="20,0,0,0" HorizontalOptions="EndAndExpand"  Content="Женский" TextColor="White"></RadioButton>

@@ -16,7 +16,7 @@
     </ContentPage.Resources>
 
     <Grid>
-        <Grid.RowDefinitions>
+        <!--<Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -47,7 +47,7 @@
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" />
             </StackLayout>
-        </ScrollView>
+        </ScrollView>-->
+        <WebView x:Name="webView" Source="https://devblogs.microsoft.com/xamarin/" VerticalOptions="FillAndExpand" />
     </Grid>
-
 </ContentPage>
