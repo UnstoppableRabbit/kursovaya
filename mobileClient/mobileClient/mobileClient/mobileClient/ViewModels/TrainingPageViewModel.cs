@@ -66,6 +66,14 @@ namespace mobileClient.ViewModels
                 OnPropertyChanged(nameof(CanClear));
             });
 
+        public ICommand PlusClickCommand =>
+            new Command(PlusClick);
+
+        private async void PlusClick(object obj)
+        {
+            await Shell.Current.GoToAsync(nameof(NewTrainingPage));
+        }
+
         public Command<CarouselElement> ItemTapped => new Command<CarouselElement>(OnAddItem);
 
         private async void OnAddItem(CarouselElement ce)

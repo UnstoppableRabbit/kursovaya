@@ -24,3 +24,4 @@ C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobi
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\obj\Debug\netstandard2.0\mobileClient.dll
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\obj\Debug\netstandard2.0\ref\mobileClient.dll
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\obj\Debug\netstandard2.0\mobileClient.pdb
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\mobileClient\mobileClient\obj\Debug\netstandard2.0\Views\NewTrainingPage.xaml.g.cs

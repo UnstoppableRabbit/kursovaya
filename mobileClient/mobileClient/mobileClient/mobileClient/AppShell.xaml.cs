@@ -10,7 +10,7 @@ namespace mobileClient
             InitializeComponent();
             Routing.RegisterRoute(nameof(NewProductPage), typeof(NewProductPage));
             Routing.RegisterRoute(nameof(AddTimeTraining), typeof(AddTimeTraining));
-            //Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(NewTrainingPage), typeof(NewTrainingPage));
         }
 
         //private async void OnMenuItemClicked(object sender, EventArgs e)

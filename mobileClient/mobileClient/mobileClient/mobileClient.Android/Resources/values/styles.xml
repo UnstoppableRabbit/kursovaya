@@ -15,4 +15,14 @@
          which is used to tint widgets -->
     <!--<item name="colorAccent">#FF4081</item>-->
   </style>
+	<style name="Launcher" parent="MainTheme.Base">
+		<item name="android:windowBackground">@drawable/launch_screen</item>
+		<item name="android:windowActionBar">false</item>
+		<item name="android:windowNoTitle">true</item>
+	</style>
+
+	<!-- Here you define your own theme and configuration -->
+	<style name="MyCustomTheme" parent="android:Theme.Material.Light">
+		<!-- Your personal configurations -->
+	</style>
 </resources>
