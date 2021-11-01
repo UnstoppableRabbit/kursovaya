@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobileClient.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label FontSize="Title" Text="Войти в аккаунт"/>
+            <Label FontSize="Body" Margin="0,50,0,0" Text="Email"/>
+            <Entry></Entry>
+            <Label FontSize="Body" Margin="0,50,0,0" Text="Пароль"/>
+            <Entry IsPassword="True"></Entry>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

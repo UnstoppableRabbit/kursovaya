@@ -4,12 +4,13 @@ namespace mobileClient.Models
 {
     public class CurrentUser
     {
-        private static CurrentUser instance = new CurrentUser();
+        private static CurrentUser instance;
         public Guid Id { get; set; }
         public string NickName { get; set; }
         public string Avatar { get; set; }
         public string Email { get; set; }
-        CurrentUser()
+
+        private CurrentUser()
         {
         }
 
@@ -18,14 +19,9 @@ namespace mobileClient.Models
             //обращение к базе и заполнение инстэнса;
         }
 
-        public void RemoveUser()
+        public static CurrentUser GetUser()
         {
-            instance = new CurrentUser();
-        }
-
-        public CurrentUser GetUser()
-        {
-            return instance;
+            return instance ?? (instance = new CurrentUser());
         }
     }
 }

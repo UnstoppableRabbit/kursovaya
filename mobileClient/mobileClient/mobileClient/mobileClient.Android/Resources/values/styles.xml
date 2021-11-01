@@ -25,4 +25,13 @@
 	<style name="MyCustomTheme" parent="android:Theme.Material.Light">
 		<!-- Your personal configurations -->
 	</style>
+	<style name="MyTheme" parent="android:style/Theme.Material.Light.DarkActionBar">
+		<item name="android:colorPressedHighlight">@color/ListViewSelected</item>
+		<item name="android:colorLongPressedHighlight">@color/ListViewHighlighted</item>
+		<item name="android:colorFocusedHighlight">@color/ListViewSelected</item>
+		<item name="android:colorActivatedHighlight">@color/ListViewSelected</item>
+		<item name="android:activatedBackgroundIndicator">@color/ListViewSelected</item>
+	</style>
+	<color name="ListViewSelected">#ce93d8</color>
+	<color name="ListViewHighlighted">#8e24aa</color>
 </resources>

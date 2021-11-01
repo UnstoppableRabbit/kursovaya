@@ -7,7 +7,6 @@
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
-    
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
 
@@ -78,8 +77,11 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-    <FlyoutItem Title="Домашняя страница" Icon="icon_home.png">
+    <FlyoutItem Title="Новости" Icon="icon_home.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Профиль" Icon="icon_user.png">
+        <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}" />
     </FlyoutItem>
     <FlyoutItem Title="Калькулятор калорий" Icon="calculator_logo.png">
         <ShellContent Route="KkalCalculatorPage" ContentTemplate="{DataTemplate local:KkalCalculatorPage}" />
