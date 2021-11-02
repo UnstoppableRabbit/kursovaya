@@ -14,11 +14,6 @@
         <ToolbarItem Text="+" Command="{Binding AddItemCommand}" />
     </ContentPage.ToolbarItems>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#e1bee7</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <Grid BackgroundColor="White">
             <ScrollView>
                 <StackLayout>

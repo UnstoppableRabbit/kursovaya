@@ -3,25 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mobileClient.Views.RegisterPage">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <StackLayout>
                 <Label FontSize="Title" Text="Регистрация"/>
                 <Label FontSize="Body" Margin="0,20,0,0" Text="Email"/>
-                <Entry></Entry>
+                <Entry Keyboard="Email" Text="{Binding Email}"></Entry>
                 <Label FontSize="Body" Margin="0,20,0,0" Text="Имя"/>
-                <Entry></Entry>
+                <Entry Text="{Binding FirstName}"></Entry>
                 <Label FontSize="Body" Margin="0,20,0,0" Text="Фамилия"/>
-                <Entry></Entry>
+                <Entry Text="{Binding LastName}"></Entry>
                 <Label FontSize="Body" Margin="0,20,0,0" Text="Дата рождения"/>
-                <DatePicker></DatePicker>
+                <DatePicker Date="{Binding Birthday}" MaximumDate="{Binding Max}" MinimumDate="{Binding Min}" ></DatePicker>
                 <StackLayout Margin="10,0" Orientation="Horizontal">
                     <RadioButton IsChecked="{Binding Path=IsMan, Mode=TwoWay}" HorizontalOptions="Start" Content="Мужской" TextColor="White"></RadioButton>
-                    <RadioButton IsChecked="{Binding Path=IsWoman, Mode=TwoWay}" Margin="20,0,0,0" HorizontalOptions="EndAndExpand"  Content="Женский" TextColor="White"></RadioButton>
+                    <RadioButton Margin="20,0,0,0" HorizontalOptions="EndAndExpand"  Content="Женский" TextColor="White"></RadioButton>
                 </StackLayout>
                 <Label FontSize="Body" Margin="0,20,0,0" Text="Пароль"/>
-                <Entry IsPassword="True"></Entry>
+                <Entry Text="{Binding Password}" IsPassword="True"></Entry>
                 <Label FontSize="Body" Margin="0,20,0,0" Text="Повторите пароль"/>
-                <Entry IsPassword="True"></Entry>
+                <Entry Text="{Binding RepeatPassword}" IsPassword="True"></Entry>
+                <Button Text="Зарегистрироваться" Command="{Binding RegisterCommand}"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

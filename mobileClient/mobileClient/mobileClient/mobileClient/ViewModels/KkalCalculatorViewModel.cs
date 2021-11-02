@@ -67,7 +67,7 @@ namespace mobileClient.ViewModels
         public ObservableCollection<ProductListElement> ProductList { get; set; }
 
         public Product SelectedProduct
-        { 
+        {
             get => _selectedProduct;
             set
             {

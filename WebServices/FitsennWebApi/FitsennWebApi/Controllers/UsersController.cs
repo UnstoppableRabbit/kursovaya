@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using FitsennWebApi.Models;
 using Microsoft.EntityFrameworkCore;
@@ -24,14 +25,29 @@ namespace FitsennWebApi.Controllers
             await using var dbContext = new FitsennContext();
             if (await dbContext.People.AnyAsync(_ => _.Email.Equals(person.Email) || _.Id.Equals(person.Id)))
                 BadRequest();
-            dbContext.People.Add(person);
+            dbContext.People.Update(person);
             await dbContext.SaveChangesAsync();
         }
 
-        // PUT api/<UsersController>/5 Регистрация
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Person person)
+        // PUT api/<UsersController> Регистрация
+        [HttpPut]
+        public async Task Put([FromBody] Person person)
         {
+            using (var dbContext = new FitsennContext())
+            {
+                try
+                {
+                    person.Id = Guid.NewGuid();
+                    if (await dbContext.People.AnyAsync(_ => _.Email.Equals(person.Email) || _.Id.Equals(person.Id)))
+                        BadRequest();
+                    dbContext.People.Add(person);
+                    await dbContext.SaveChangesAsync();
+                }
+                catch (Exception e)
+                {
+                    var s = e.Message;
+                }
+            }
         }
     }
 }

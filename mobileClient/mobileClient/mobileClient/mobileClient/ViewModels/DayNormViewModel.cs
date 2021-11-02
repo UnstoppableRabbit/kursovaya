@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace mobileClient.ViewModels
@@ -46,11 +43,10 @@ namespace mobileClient.ViewModels
         public ICommand CalcCommand =>
             new Command(param =>
                 {
-                    if (IsMan)
-                        App.Current.MainPage.DisplayAlert("Ваша дневная норма калорий:", $"{66.5 + (13.7 * Weight) + (5 * Height) + (6.8 * Age)}", "Ok");
-                
-                    if (IsWoman)
-                        App.Current.MainPage.DisplayAlert("Ваша дневная норма калорий:", $"{665 + (9.6 * Weight) + (1.8 * Height) + (4.7 * Age)}", "Ok");
+                    App.Current.MainPage.DisplayAlert("Ваша дневная норма калорий:",
+                        IsMan
+                            ? $"{66.5 + (13.7 * Weight) + (5 * Height) + (6.8 * Age)}"
+                            : $"{665 + (9.6 * Weight) + (1.8 * Height) + (4.7 * Age)}", "Ok");
                 },
                 param => true);
 
