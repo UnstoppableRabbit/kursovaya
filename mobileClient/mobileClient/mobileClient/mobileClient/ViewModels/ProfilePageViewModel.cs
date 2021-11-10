@@ -18,10 +18,19 @@ namespace mobileClient.ViewModels
 
         public bool IsLogined => CurrentUser.Id != Guid.Empty;
 
+        public bool IsNotLogined => !IsLogined;
+
         public ProfilePageViewModel()
         {
+            UpdateData();
+        }
+
+        public void UpdateData()
+        {
             CurrentUser = CurrentUser.GetUser();
+            OnPropertyChanged(nameof(CurrentUser));
             OnPropertyChanged(nameof(IsLogined));
+            OnPropertyChanged(nameof(IsNotLogined));
         }
 
         public ICommand GoToLoginCommand =>
@@ -50,6 +59,7 @@ namespace mobileClient.ViewModels
             CurrentUser.Email = null;
             CurrentUser.NickName = null;
             OnPropertyChanged(nameof(IsLogined));
+            OnPropertyChanged(nameof(IsNotLogined));
         }
     }
 }

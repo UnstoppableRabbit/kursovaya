@@ -152,10 +152,13 @@ namespace mobileClient.Droid
 			public const int MainTheme = 2130968577;
 			
 			// aapt resource value: 0x7F040002
-			public const int MyCustomTheme = 2130968578;
+			public const int MyDatePickerDialogTheme = 2130968578;
 			
 			// aapt resource value: 0x7F040003
-			public const int MyTheme = 2130968579;
+			public const int MyDatePickerStyle = 2130968579;
+			
+			// aapt resource value: 0x7F040004
+			public const int MyTheme = 2130968580;
 			
 			static Style()
 			{

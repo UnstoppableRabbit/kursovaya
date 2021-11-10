@@ -1,24 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mobileClient.Views.ProfilePage">
+             x:Class="mobileClient.Views.ProfilePage"
+             Title="Профиль">
     <ContentPage.Content>
         <ScrollView>
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <StackLayout BackgroundColor="{StaticResource Accent}">
-                    <Label FontSize="Header" HorizontalOptions="CenterAndExpand">Вы не вошли в систему</Label>
-                </StackLayout>
-                <StackLayout Grid.Row="1">
-                    <Button Text="Вход" HorizontalOptions="Fill" Margin="10" Command="{Binding GoToLoginCommand}"></Button>
-                    <Label FontSize="Small" HorizontalOptions="CenterAndExpand" Margin="0,40,0,0">Если у вас нет учетной записи</Label>
-                    <Button Text="Регистрация" HorizontalOptions="Fill" Margin="10" Command="{Binding GoToRegisterCommand}"></Button>
-                </StackLayout>
-                <StackLayout></StackLayout>
-            </Grid>    
+                <Grid IsVisible="{Binding IsNotLogined}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout BackgroundColor="{StaticResource Accent}">
+                        <Label FontSize="Title" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">Вы не вошли в систему</Label>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1">
+                        <Button Text="Вход" HorizontalOptions="Fill" Margin="10,50" Command="{Binding GoToLoginCommand}"></Button>
+                        <Label FontSize="Small" TextColor="Black" HorizontalOptions="CenterAndExpand" Margin="0,300,0,0">Если у вас нет учетной записи</Label>
+                        <Button Text="Регистрация" HorizontalOptions="CenterAndExpand" Margin="10" Command="{Binding GoToRegisterCommand}"></Button>
+                    </StackLayout>
+                    <StackLayout></StackLayout>
+                </Grid>
+                <Grid IsVisible="{Binding IsLogined}">
+                    <StackLayout>
+                        <Label HorizontalTextAlignment="Center" Text="{Binding CurrentUser.NickName, UpdateSourceEventName=PropertyChanged, Mode=TwoWay}"></Label>
+                        <Label HorizontalTextAlignment="Center" Text="{Binding CurrentUser.Email, UpdateSourceEventName=PropertyChanged, Mode=TwoWay}"></Label>
+                        <Label HorizontalTextAlignment="Center" Text="{Binding CurrentUser.Birthday, UpdateSourceEventName=PropertyChanged, Mode=TwoWay}"></Label>
+                        <Label FontSize="Small" TextColor="Black" HorizontalOptions="CenterAndExpand" Margin="0,300,0,0">Сменить учетную запись</Label>
+                        <Button Text="Выйти" HorizontalOptions="CenterAndExpand" Margin="10" Command="{Binding LogoutCommand}"></Button>
+                    </StackLayout>
+                    <StackLayout></StackLayout>
+                </Grid>
+            </Grid>  
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

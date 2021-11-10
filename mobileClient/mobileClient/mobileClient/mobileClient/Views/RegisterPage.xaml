@@ -1,28 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mobileClient.Views.RegisterPage">
+             x:Class="mobileClient.Views.RegisterPage"
+             BackgroundColor="{StaticResource Accent}"
+             Title="Регистрация">
     <ContentPage.Content>
-        <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <ScrollView>
             <StackLayout>
-                <Label FontSize="Title" Text="Регистрация"/>
-                <Label FontSize="Body" Margin="0,20,0,0" Text="Email"/>
-                <Entry Keyboard="Email" Text="{Binding Email}"></Entry>
-                <Label FontSize="Body" Margin="0,20,0,0" Text="Имя"/>
-                <Entry Text="{Binding FirstName}"></Entry>
-                <Label FontSize="Body" Margin="0,20,0,0" Text="Фамилия"/>
-                <Entry Text="{Binding LastName}"></Entry>
-                <Label FontSize="Body" Margin="0,20,0,0" Text="Дата рождения"/>
-                <DatePicker Date="{Binding Birthday}" MaximumDate="{Binding Max}" MinimumDate="{Binding Min}" ></DatePicker>
+                <Label FontSize="Title" HorizontalTextAlignment="Center" Text="Регистрация"/>
+                <Label FontSize="Body" HorizontalTextAlignment="Center" Margin="0,20,0,0" Text="Email"/>
+                <Entry Keyboard="Email" HorizontalTextAlignment="Center" Text="{Binding Email}"></Entry>
+                <Label FontSize="Body" HorizontalTextAlignment="Center" Margin="0,20,0,0" Text="Имя"/>
+                <Entry Text="{Binding FirstName}" HorizontalTextAlignment="Center"></Entry>
+                <Label FontSize="Body" HorizontalTextAlignment="Center" Margin="0,20,0,0" Text="Фамилия"/>
+                <Entry Text="{Binding LastName}" HorizontalTextAlignment="Center" ></Entry>
+                <Label FontSize="Body" HorizontalTextAlignment="Center" Margin="0,20,0,0" Text="Дата рождения"/>
+                <DatePicker Date="{Binding Birthday}" HorizontalOptions="Center"></DatePicker>
+                <Label FontSize="Body" HorizontalTextAlignment="Center" Margin="0,20,0,0" Text="Пол"></Label>
                 <StackLayout Margin="10,0" Orientation="Horizontal">
                     <RadioButton IsChecked="{Binding Path=IsMan, Mode=TwoWay}" HorizontalOptions="Start" Content="Мужской" TextColor="White"></RadioButton>
                     <RadioButton Margin="20,0,0,0" HorizontalOptions="EndAndExpand"  Content="Женский" TextColor="White"></RadioButton>
                 </StackLayout>
-                <Label FontSize="Body" Margin="0,20,0,0" Text="Пароль"/>
-                <Entry Text="{Binding Password}" IsPassword="True"></Entry>
-                <Label FontSize="Body" Margin="0,20,0,0" Text="Повторите пароль"/>
-                <Entry Text="{Binding RepeatPassword}" IsPassword="True"></Entry>
-                <Button Text="Зарегистрироваться" Command="{Binding RegisterCommand}"></Button>
+                <Label HorizontalTextAlignment="Center" FontSize="Body" Margin="0,20,0,0" Text="Пароль"/>
+                <Entry HorizontalTextAlignment="Center" Text="{Binding Password}" IsPassword="True"></Entry>
+                <Label HorizontalTextAlignment="Center" FontSize="Body" Margin="0,20,0,0" Text="Повторите пароль"/>
+                <Entry HorizontalTextAlignment="Center" Text="{Binding RepeatPassword}" IsPassword="True"></Entry>
+                <Button Margin="0,10" Text="Зарегистрироваться" Command="{Binding RegisterCommand}"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
