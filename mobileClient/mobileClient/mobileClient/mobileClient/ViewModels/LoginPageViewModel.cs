@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using DataLib.Mssql.Models;
 using mobileClient.Models;
-using mobileClient.Views;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -42,6 +41,8 @@ namespace mobileClient.ViewModels
                         curUser.NickName = user.FirstName + " " + user.LastName;
                         curUser.Email = user.Email;
                         curUser.Birthday = user.Birthday;
+                        CurrentUser.SetToConfig(ref curUser);
+
                         await Shell.Current.GoToAsync("//ProfilePage");
                     }
                 }

@@ -12,7 +12,6 @@ namespace mobileClient
             Routing.RegisterRoute(nameof(NewProductPage), typeof(NewProductPage));
             Routing.RegisterRoute(nameof(AddTimeTraining), typeof(AddTimeTraining));
             Routing.RegisterRoute(nameof(NewTrainingPage), typeof(NewTrainingPage));
-            Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using DataLib.Sqlite.Cache;
 using mobileClient.Models;
 using mobileClient.Views;
 using Xamarin.Forms;
@@ -16,7 +17,7 @@ namespace mobileClient.ViewModels
             set => SetProperty(ref _currentUser, value);
         }
 
-        public bool IsLogined => CurrentUser.Id != Guid.Empty;
+        public bool IsLogined => ! string.IsNullOrEmpty(CurrentUser.NickName);
 
         public bool IsNotLogined => !IsLogined;
 
@@ -28,6 +29,7 @@ namespace mobileClient.ViewModels
         public void UpdateData()
         {
             CurrentUser = CurrentUser.GetUser();
+            CurrentUser.GetFromConfig(ref _currentUser);
             OnPropertyChanged(nameof(CurrentUser));
             OnPropertyChanged(nameof(IsLogined));
             OnPropertyChanged(nameof(IsNotLogined));
@@ -58,6 +60,8 @@ namespace mobileClient.ViewModels
             CurrentUser.Avatar = null;
             CurrentUser.Email = null;
             CurrentUser.NickName = null;
+            CacheContext.Users.DeleteCache();
+
             OnPropertyChanged(nameof(IsLogined));
             OnPropertyChanged(nameof(IsNotLogined));
         }

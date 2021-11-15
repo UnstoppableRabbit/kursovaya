@@ -1,4 +1,5 @@
 ﻿using System;
+using DataLib.Sqlite.Cache;
 
 namespace mobileClient.Models
 {
@@ -15,9 +16,26 @@ namespace mobileClient.Models
         {
         }
 
-        public void SetUser(string nickName, string password)
+        public static void GetFromConfig(ref CurrentUser user)
         {
-            //обращение к базе и заполнение инстэнса;
+            var usr = CacheContext.Users.GetItem();
+            if (usr != null)
+            {
+                user.Avatar = usr.Avatar;
+                user.Birthday = usr.BirthDay;
+                user.Email = usr.Email;
+                user.NickName = usr.UserName;
+            }
+        }
+        public static void SetToConfig(ref CurrentUser user)
+        {
+            CacheContext.Users.SaveItem(new User()
+            {
+                Avatar = user.Avatar,
+                BirthDay = user.Birthday,
+                Email = user.Email,
+                UserName = user.NickName
+            });
         }
 
         public static CurrentUser GetUser()

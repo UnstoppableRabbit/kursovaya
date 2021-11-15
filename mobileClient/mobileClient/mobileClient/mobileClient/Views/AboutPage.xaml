@@ -14,40 +14,25 @@
             <Color x:Key="Accent">#ce93d8</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-
-    <Grid>
-        <!--<Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Label Text="Fitsenn" FontSize="40" TextColor="White"></Label>
-                </ContentView>
-            </StackLayout>
+    <ScrollView Grid.Row="1">
+        <StackLayout Orientation="Vertical" Padding="10" Spacing="10">
+            <ListView ItemsSource="{Binding News}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout BackgroundColor="{StaticResource Accent}">
+                                    <Label TextColor="Black" Text="{Binding Title}" HorizontalTextAlignment="Center" FontSize="21" />
+                                    <Image Source="{Binding Foto}"></Image>
+                                    <Label TextColor="Black" Text="{Binding Text}" FontSize="15"></Label>
+                                    <Label TextColor="DarkOrchid" HorizontalTextAlignment="End" Text="{Binding DateTime}"></Label>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>    
         </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label TextColor="Black" Text="Лучшее приложение для фитнеса" FontSize="Title"/>
-                <Label TextColor="Black" Text="Ваше имя" FontSize="16" Padding="0,0,0,0"/>
-                <Label TextColor="Black" Text="Ваша фамилия" FontSize="16" Padding="0,0,0,0"/>
-                <Label TextColor="Black" Text="Ваше что-то еще" FontSize="16" Padding="0,0,0,0"/>
-                <Label TextColor="Black" FontSize="16" Padding="0,24,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span TextColor="Black" Text="Пользуемся не стесняемся"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Официальный сайт"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-            </StackLayout>
-        </ScrollView>-->
-        <WebView x:Name="webView" Source="https://devblogs.microsoft.com/xamarin/" VerticalOptions="FillAndExpand" />
-    </Grid>
+    </ScrollView>
+        <!--<WebView x:Name="webView" Source="https://devblogs.microsoft.com/xamarin/" VerticalOptions="FillAndExpand" />-->
 </ContentPage>
