@@ -1,24 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using DataLib.Mssql.Models;
-using DataLib.Sqlite;
-using DataLib.Sqlite.Cache;
-using DataLib.Sqlite.Model;
-using Java.Util;
 using mobileClient.Models;
 using Newtonsoft.Json;
-using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace mobileClient.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {
+
+        private bool isPostVisible;
+
+        public bool IsPostVisible
+        {
+            get => isPostVisible;
+            set => SetProperty(ref isPostVisible, value, nameof(IsPostVisible));
+        }
+
+        public bool IsNotPostVisible => !IsPostVisible;
+
+
         public ObservableCollection<Post> Posts { get; set; } = new ObservableCollection<Post>();
         private static string apiUrl = AppData.ApiUrl + "Posts/";
         public AboutViewModel()
@@ -31,14 +35,27 @@ namespace mobileClient.ViewModels
 
         public async Task GetPostsAsync()
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                client.DefaultRequestHeaders.Add("Accept", "application/json");
-                // ReSharper disable once PossibleNullReferenceException
-                foreach (var post in JsonConvert.DeserializeObject<List<Post>>(await (await client.GetAsync(apiUrl)).Content.ReadAsStringAsync()))
+                using (HttpClient client = new HttpClient())
                 {
-                    Posts.Add(post);
+                    client.DefaultRequestHeaders.Add("Accept", "application/json");
+                    Posts.Clear();
+                    // ReSharper disable once PossibleNullReferenceException
+                    foreach (var post in JsonConvert.DeserializeObject<List<Post>>(
+                        await (await client.GetAsync(apiUrl)).Content.ReadAsStringAsync()))
+                    {
+                        Posts.Add(post);
+                    }
                 }
+
+                IsPostVisible = true;
+                OnPropertyChanged(nameof(IsNotPostVisible));
+            }
+            catch
+            {
+                IsPostVisible = false;
+                OnPropertyChanged(nameof(IsNotPostVisible));
             }
         }
     }

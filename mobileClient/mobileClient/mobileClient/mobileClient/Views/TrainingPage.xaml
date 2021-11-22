@@ -36,24 +36,31 @@
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
         </CarouselView>
-        <ListView Grid.Row="1" RowHeight="60" ItemsSource="{Binding TrainingList}" SelectedItem="{Binding SelectedItem}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <StackLayout>
-                                <Label TextColor="Black" Text="{Binding Name}" FontSize="21" />
-                                <StackLayout Orientation="Horizontal">
-                                    <Label TextColor="Black" Text="{Binding Measurement}"></Label>
-                                    <Label TextColor="Black" Margin="10,0,0,0" Text="Сожжено каллорий:"></Label>
-                                    <Label TextColor="Black" Text="{Binding Calories}"></Label>
+        <StackLayout Grid.Row="1">
+            <StackLayout Orientation="Horizontal">
+                <Label TextColor="Black" FontSize="Title">Всего калорий:</Label>
+                <Label TextColor="Black" FontSize="Title" Text="{Binding TotalCalories}">
+                </Label>
+            </StackLayout>
+            <ListView  RowHeight="60" ItemsSource="{Binding TrainingList}" SelectedItem="{Binding SelectedItem}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label TextColor="Black" Text="{Binding Name}" FontSize="21" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label TextColor="Black" Text="{Binding Measurement}"></Label>
+                                        <Label TextColor="Black" Margin="10,0,0,0" Text="Сожжено каллорий:"></Label>
+                                        <Label TextColor="Black" Text="{Binding Calories}"></Label>
+                                    </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>

@@ -15,7 +15,7 @@ namespace DataLib.Sqlite
         }
         public IEnumerable<Product> GetItems()
         {
-            return database.Table<Product>().ToList();
+            return database.Table<Product>().OrderBy(_ => _.Name).ToList();
         }
         public Product GetItem(int id)
         {

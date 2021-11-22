@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using DataLib.Sqlite.Cache;
 using mobileClient.Helpers;
@@ -27,6 +28,8 @@ namespace mobileClient.ViewModels
         public bool CanClear => TrainingList.Count > 0;
 
         public bool CanDelete => SelectedItem != null;
+
+        public int TotalCalories => (int)TrainingList.Sum(_ => _.Calories);
 
         private TrainingListElement selectedItem;
         public TrainingListElement SelectedItem

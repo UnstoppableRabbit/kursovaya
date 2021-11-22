@@ -2,33 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mobileClient.Views.AboutPage"
-             xmlns:vm="clr-namespace:mobileClient.ViewModels"
              Title="{Binding Title}">
-    
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#ce93d8</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <ScrollView Grid.Row="1">
-        <StackLayout Orientation="Vertical" Padding="10" Spacing="10">
-            <ListView ItemsSource="{Binding Posts, UpdateSourceEventName=PropertyChanged, Mode=TwoWay}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout BackgroundColor="{StaticResource Accent}">
-                                    <Label TextColor="Black" Text="{Binding Title}" HorizontalTextAlignment="Center" FontSize="21" />
-                                    <Image Source="{Binding Foto}"></Image>
-                                    <Label TextColor="Black" Text="{Binding Text}" FontSize="15"></Label>
-                                    <Label TextColor="DarkOrchid" HorizontalTextAlignment="End" Text="{Binding Date}"></Label>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>    
+    <StackLayout Orientation="Vertical" Padding="10" Spacing="10">
+        <ListView IsVisible="{Binding IsPostVisible}" ItemsSource="{Binding Posts, UpdateSourceEventName=PropertyChanged, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout BackgroundColor="WhiteSmoke">
+                                <Label TextColor="Black" Text="{Binding Title}" HorizontalTextAlignment="Center" FontSize="21" />
+                                <Image Source="{Binding Foto}"></Image>
+                                <Label TextColor="Black" Text="{Binding Text}" FontSize="15"></Label>
+                                <Label TextColor="DarkOrchid" HorizontalTextAlignment="End" Text="{Binding Date}"></Label>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout IsVisible="{Binding IsNotPostVisible}">
+            <Image Source="404.png"></Image>
+            <Label TextColor="Black">Сервер недоступен или отсутствует подключение к интернету</Label>
+            <Label TextColor="Black">Приложение запущено в локальном режиме</Label>
         </StackLayout>
-    </ScrollView>
-        <!--<WebView x:Name="webView" Source="https://devblogs.microsoft.com/xamarin/" VerticalOptions="FillAndExpand" />-->
+    </StackLayout>
 </ContentPage>

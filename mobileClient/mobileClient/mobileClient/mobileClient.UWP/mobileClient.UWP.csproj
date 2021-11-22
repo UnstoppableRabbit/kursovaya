@@ -104,6 +104,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.png" />
     <Content Include="begaet.png" />
     <Content Include="calculator_logo.png" />
     <Content Include="icon_gantel.png" />
