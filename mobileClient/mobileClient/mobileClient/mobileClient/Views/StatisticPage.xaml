@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobileClient.Views.StatisticPage"
+             Title="Статистика"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Margin="10,10,10,0" Text="Сохранить статистику за сегодня"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White"
+                        HorizontalOptions="CenterAndExpand"
+                        Command="{Binding SaveStatisticCommand}">
+                </Button>
+            </StackLayout>
+            <forms:ChartView Chart="{Binding Chart}"  HeightRequest="210"></forms:ChartView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

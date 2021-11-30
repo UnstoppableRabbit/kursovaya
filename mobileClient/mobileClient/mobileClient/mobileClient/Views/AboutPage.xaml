@@ -27,7 +27,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackLayout IsVisible="{Binding IsNotPostVisible}">
-            <Image Source="404.png"></Image>
+            <Image Source="p404.png"></Image>
             <Label TextColor="Black">Сервер недоступен или отсутствует подключение к интернету</Label>
             <Label TextColor="Black">Приложение запущено в локальном режиме</Label>
         </StackLayout>

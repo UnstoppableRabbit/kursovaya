@@ -49,6 +49,7 @@ namespace mobileClient.ViewModels
             {
                 TrainingList.Add(el);
             }
+            OnPropertyChanged(nameof(TotalCalories));
             OnPropertyChanged(nameof(CanClear));
         }
         public ICommand ClearProductCommand =>

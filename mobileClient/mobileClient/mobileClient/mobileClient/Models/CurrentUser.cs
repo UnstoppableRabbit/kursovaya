@@ -21,6 +21,7 @@ namespace mobileClient.Models
             var usr = CacheContext.Users.GetItem();
             if (usr != null)
             {
+                user.Id = Guid.Parse(usr.BaseId);
                 user.Avatar = usr.Avatar;
                 user.Birthday = usr.BirthDay;
                 user.Email = usr.Email;
@@ -31,6 +32,7 @@ namespace mobileClient.Models
         {
             CacheContext.Users.SaveItem(new User()
             {
+                BaseId = user.Id.ToString(),
                 Avatar = user.Avatar,
                 BirthDay = user.Birthday,
                 Email = user.Email,

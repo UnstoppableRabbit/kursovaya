@@ -14,6 +14,7 @@ namespace mobileClient
             Routing.RegisterRoute(nameof(NewTrainingPage), typeof(NewTrainingPage));
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
+            Routing.RegisterRoute(nameof(SaveStatisticPage), typeof(SaveStatisticPage));
         }
 
         //private async void OnMenuItemClicked(object sender, EventArgs e)

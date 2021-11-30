@@ -8,7 +8,6 @@ namespace DataLib.Mssql.Models
         public Guid PersonId { get; set; }
         public DateTime Date { get; set; }
         public double Weight { get; set; }
-        public int Height { get; set; }
 
         public virtual Person Person { get; set; }
     }

@@ -8,6 +8,7 @@ namespace DataLib.Sqlite.Cache
     {
         [PrimaryKey]
         public int Id { get; set; }
+        public string BaseId { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
         public string Avatar { get; set; }
