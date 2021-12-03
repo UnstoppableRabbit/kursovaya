@@ -65,7 +65,7 @@ namespace mobileClient.ViewModels
             new Command(() =>
             {
                 TrainingList.Remove(SelectedItem);
-                CacheContext.TrainingCache.DeleteItem(SelectedItem.Id);
+                CacheContext.TrainingCache.DeleteItem();
                 SelectedItem = null;
                 OnPropertyChanged(nameof(CanClear));
             });

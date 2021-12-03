@@ -21,9 +21,9 @@ namespace DataLib.Sqlite.Cache
         {
             return cache.Get<TrainingCache>(id);
         }
-        public int DeleteItem(int id)
+        public int DeleteItem(TrainingCache tr)
         {
-            return cache.Delete<TrainingCache>(id);
+            return cache.Delete<TrainingCache>(tr);
         }
         public int DeleteCache()
         {

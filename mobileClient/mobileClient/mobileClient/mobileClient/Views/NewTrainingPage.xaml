@@ -12,7 +12,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="#ce93d8">
-                <Label HorizontalTextAlignment="Center" Margin="0,50,0,0" TextColor="White" FontSize="22">Название тренировки</Label>
+                <Label HorizontalTextAlignment="Center" Margin="0,50,0,0" TextColor="White" FontSize="22">Название упражнения</Label>
                 <Entry Margin="15,0" HorizontalTextAlignment="Center" Text="{Binding Name}" TextColor="White" FontSize="22"></Entry>
                 <Label HorizontalTextAlignment="Center" Margin="0,50,0,0" TextColor="White" FontSize="22"> Тип упражнения</Label>
                 <StackLayout Orientation="Horizontal">
@@ -22,9 +22,9 @@
                 <Label Margin="0,100,0,0" HorizontalTextAlignment="Center" TextColor="White" FontSize="22">Сжигание калорий за минуту/повторение</Label>
                 <Entry Margin="15,0" HorizontalTextAlignment="Center" Text="{Binding Calories}" TextColor="White" FontSize="22"></Entry>
                 <Button Command="{Binding AddTrainingCommand}" Text="Добавить" Margin="20" IsEnabled="{Binding CanAdd}"></Button>
-                
-                <Label HorizontalTextAlignment="Center" Margin="0,70,0,0" TextColor="White" FontSize="30">Удаление тренировки</Label>
-                <Picker ItemDisplayBinding="{Binding Name}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" TitleColor="White" Title="Выберите тренировку" SelectedItem="{Binding Deleted}" ItemsSource="{Binding AllTrainings, UpdateSourceEventName=PropertyChanged}">
+
+                <Label HorizontalTextAlignment="Center" Margin="0,70,0,0" TextColor="White" FontSize="30">Удаление упражнения</Label>
+                <Picker ItemDisplayBinding="{Binding Name}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" TitleColor="White" Title="Выберите упражнение" SelectedItem="{Binding Deleted}" ItemsSource="{Binding AllTrainings, UpdateSourceEventName=PropertyChanged}">
                 </Picker>
                 <Button Command="{Binding DeleteTrainingCommand}" Text="Удалить" Margin="20" IsEnabled="{Binding CanDelete}"></Button>
             </StackLayout>

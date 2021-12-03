@@ -5,16 +5,30 @@
              Title="Статистика"
              xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Button Margin="10,10,10,0" Text="Сохранить статистику за сегодня"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White"
-                        HorizontalOptions="CenterAndExpand"
-                        Command="{Binding SaveStatisticCommand}">
-                </Button>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout IsVisible="{Binding IsVisible}">
+                    <StackLayout Orientation="Horizontal">
+                        <Button Margin="10,10,10,0" Text="Сохранить статистику за сегодня"
+                                BackgroundColor="{StaticResource Primary}"
+                                TextColor="White"
+                                HorizontalOptions="CenterAndExpand"
+                                Command="{Binding SaveStatisticCommand}">
+                        </Button>
+                    </StackLayout>
+                    <Label HorizontalOptions="CenterAndExpand" FontSize="20" TextColor="Black">Прогресс веса</Label>
+                    <forms:ChartView Chart="{Binding LineChart}"  HeightRequest="210"></forms:ChartView>
+                    <Label HorizontalOptions="CenterAndExpand" FontSize="13" Text="{Binding WeightLabel, UpdateSourceEventName = PropertyChanged}" TextColor="Black"></Label>
+                    <Label HorizontalOptions="CenterAndExpand" FontSize="20" HorizontalTextAlignment="Center" Margin="0,50,0,0" TextColor="Black">Статистика потребления калорий (с учетом тренировок)</Label>
+                    <forms:ChartView Chart="{Binding BarChart}" HeightRequest="230"></forms:ChartView>
+                    <Label HorizontalOptions="CenterAndExpand" FontSize="13" Text="{Binding CaloriesLabel}" TextColor="Black"></Label>
+                </StackLayout>
+                <StackLayout IsVisible="{Binding IsNotVisible}">
+                    <Image Source="p404.png"></Image>
+                    <Label TextColor="Black">Сервер недоступен или отсутствует подключение к интернету</Label>
+                    <Label TextColor="Black">Приложение запущено в локальном режиме</Label>
+                </StackLayout>
             </StackLayout>
-            <forms:ChartView Chart="{Binding Chart}"  HeightRequest="210"></forms:ChartView>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

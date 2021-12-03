@@ -9,5 +9,6 @@ namespace DataLib.Sqlite.Cache
         public int Id { get; set; }
         public int TrainingId { get; set; }
         public int Points { get; set; }
+        public double Calories { get; set; }
     }
 }

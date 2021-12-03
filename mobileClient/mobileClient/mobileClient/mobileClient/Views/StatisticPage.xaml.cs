@@ -8,11 +8,11 @@ namespace mobileClient.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StatisticPage : ContentPage
     {
-        StatisticPageVievModel _viewModel;
+        StatisticPageViewModel _viewModel;
         public StatisticPage()
         {
             InitializeComponent();
-            BindingContext = _viewModel = new StatisticPageVievModel();
+            BindingContext = _viewModel = new StatisticPageViewModel();
         }
     }
 }

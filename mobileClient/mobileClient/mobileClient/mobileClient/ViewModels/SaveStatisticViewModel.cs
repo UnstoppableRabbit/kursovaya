@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using DataLib.Mssql.Models;
+using DataLib.Sqlite.Cache;
 using mobileClient.Models;
 using mobileClient.Views;
 using Newtonsoft.Json;
@@ -34,6 +36,12 @@ namespace mobileClient.ViewModels
         {
             get => currentWeight;
             set => SetProperty(ref currentWeight, value);
+        }
+
+        public SaveStatisticViewModel()
+        {
+            EatenCalories = (int) CacheContext.CalculatorCache.GetItems().Sum(_ => _.Weight);
+            BurntCalories = CacheContext.TrainingCache.GetItems().Sum(_ => _.Points * _.Calories);
         }
 
         public Command SaveStatisticCommand => new Command(async () => await SaveStatisticAsync());

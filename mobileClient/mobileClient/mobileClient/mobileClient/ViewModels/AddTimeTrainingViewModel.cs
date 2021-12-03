@@ -95,7 +95,8 @@ namespace mobileClient.ViewModels
                 CacheContext.TrainingCache.SaveItem(new TrainingCache
                 {
                     TrainingId = SelectedItem.Id,
-                    Points = int.Parse(Points)
+                    Points = int.Parse(Points),
+                    Calories = SelectedItem.Calories
                 });
                 SelectedItem = null;
                 Points = null;

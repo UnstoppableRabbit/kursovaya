@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using FitsennWebApi.Models;
 using Microsoft.EntityFrameworkCore;
@@ -11,18 +12,22 @@ namespace FitsennWebApi.Controllers
     [ApiController]
     public class StatisticController : ControllerBase
     {
-        // GET: api/<StatisticController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        // GET: api/<StatisticController>/diet/persId
+        [HttpGet("diet/{id}")]
+        public async Task<List<Diet>> Get(Guid id)
         {
-            return new string[] { "value1", "value2" };
+            await using var dbContext = new FitsennContext();
+            return await dbContext.Diets.Where(_ => _.PersonId.Equals(id)).OrderBy(_ => _.Date).Take(7)
+                .ToListAsync();
         }
 
-        // GET api/<StatisticController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/<StatisticController>/log/persId
+        [HttpGet("log/{id}")]
+        public async Task<List<PersonSportLog>> GetLogs(Guid id)
         {
-            return "value";
+            await using var dbContext = new FitsennContext();
+            return await dbContext.PersonSportLogs.Where(_ => _.PersonId.Equals(id)).OrderBy(_ => _.Date).Take(7)
+                .ToListAsync();
         }
 
         // POST api/<StatisticController>
