@@ -53,8 +53,8 @@ namespace mobileClient.ViewModels
             current = CurrentUser.GetUser();
             CurrentUser.GetFromConfig(ref current);
             GetStatisticAsync();
-            LineChart = new LineChart { Entries = logEntries, LabelOrientation = Orientation.Horizontal, ValueLabelOrientation = Orientation.Horizontal};
-            BarChart = new BarChart { Entries = dietEntries, LabelOrientation = Orientation.Horizontal, ValueLabelOrientation = Orientation.Horizontal };
+            LineChart = new LineChart { Entries = logEntries, LabelOrientation = Orientation.Vertical, ValueLabelOrientation = Orientation.Horizontal};
+            BarChart = new BarChart { Entries = dietEntries, LabelOrientation = Orientation.Vertical, ValueLabelOrientation = Orientation.Horizontal };
         }
 
         public async Task GetStatisticAsync()

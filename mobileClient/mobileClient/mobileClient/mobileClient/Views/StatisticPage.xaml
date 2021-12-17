@@ -17,10 +17,10 @@
                         </Button>
                     </StackLayout>
                     <Label HorizontalOptions="CenterAndExpand" FontSize="20" TextColor="Black">Прогресс веса</Label>
-                    <forms:ChartView Chart="{Binding LineChart}"  HeightRequest="210"></forms:ChartView>
+                    <forms:ChartView Chart="{Binding LineChart}"  HeightRequest="330"></forms:ChartView>
                     <Label HorizontalOptions="CenterAndExpand" FontSize="13" Text="{Binding WeightLabel, UpdateSourceEventName = PropertyChanged}" TextColor="Black"></Label>
                     <Label HorizontalOptions="CenterAndExpand" FontSize="20" HorizontalTextAlignment="Center" Margin="0,50,0,0" TextColor="Black">Статистика потребления калорий (с учетом тренировок)</Label>
-                    <forms:ChartView Chart="{Binding BarChart}" HeightRequest="230"></forms:ChartView>
+                    <forms:ChartView Chart="{Binding BarChart}" HeightRequest="330"></forms:ChartView>
                     <Label HorizontalOptions="CenterAndExpand" FontSize="13" Text="{Binding CaloriesLabel}" TextColor="Black"></Label>
                 </StackLayout>
                 <StackLayout IsVisible="{Binding IsNotVisible}">

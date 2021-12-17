@@ -15,7 +15,7 @@ namespace mobileClient.Helpers
             foreach (var training in trList)
             {
                 if(allTrainings.FirstOrDefault(_ => _.Id.Equals(training.TrainingId)) != null)
-                    result.Add(new TrainingListElement(allTrainings.First(_=>_.Id.Equals(training.TrainingId)), training.Points));
+                    result.Add(new TrainingListElement(allTrainings.First(_=>_.Id.Equals(training.TrainingId)), training.Points, training.Id));
             }
             return result;
         }

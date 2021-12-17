@@ -28,7 +28,7 @@ namespace FitsennWebApi.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(LocalDb)\\MSSQLLocalDB;Database=Fitsenn;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("workstation id=fitsenndb.mssql.somee.com;packet size=4096;user id=f3m3n1stk4_SQLLogin_1;pwd=3jdyi8sxqj;data source=fitsenndb.mssql.somee.com;persist security info=False;initial catalog=fitsenndb");
             }
         }
 

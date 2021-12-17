@@ -25,6 +25,14 @@ namespace DataLib.Sqlite
         {
             return database.Delete<Product>(id);
         }
+
+        public void Clear()
+        {
+            foreach (var pr in database.Table<Product>())
+            {
+                database.Delete<Product>(pr.Id);
+            }
+        }
         public int SaveItem(Product item)
         {
             if (item.Id == 0)

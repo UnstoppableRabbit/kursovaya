@@ -25,6 +25,14 @@ namespace DataLib.Sqlite
         {
             return database.Delete<Training>(id);
         }
+
+        public void Clear()
+        {
+            foreach (var tr in database.Table<Training>())
+            {
+                database.Delete<Training>(tr.Id);
+            }
+        }
         public int SaveItem(Training item)
         {
             if (item.Id == 0)

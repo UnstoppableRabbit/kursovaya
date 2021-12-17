@@ -6,3 +6,4 @@ C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\DataLib\obj\Relea
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\DataLib\obj\Release\netstandard2.0\DataLib.csproj.CoreCompileInputs.cache
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\DataLib\obj\Release\netstandard2.0\DataLib.dll
 C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\DataLib\obj\Release\netstandard2.0\DataLib.pdb
+C:\Users\Minaev_G\source\repos\krsch\mobileClient\mobileClient\DataLib\obj\Release\netstandard2.0\DataLib.csproj.AssemblyReference.cache

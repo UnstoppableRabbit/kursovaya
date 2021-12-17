@@ -4,9 +4,10 @@ namespace mobileClient.Models
 {
     public class TrainingListElement
     {
-        public TrainingListElement(Training tr, int pts)
+        public TrainingListElement(Training tr, int pts, int cacheId)
         {
             training = tr;
+            CacheId = cacheId;
             if (tr.IsRepeated)
                 Repeat = pts;
             else
@@ -16,6 +17,7 @@ namespace mobileClient.Models
 
         public Training Training => training;
         public int Id => training.Id;
+        public int CacheId { get; set; }
         public string Name => training.Name;
         public bool IsRepeated => training.IsRepeated;
         public string Measurement => IsRepeated ? $"{Repeat} повторений;" : $"{Seconds} секунд;";

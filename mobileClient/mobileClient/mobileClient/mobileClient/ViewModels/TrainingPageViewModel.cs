@@ -59,15 +59,17 @@ namespace mobileClient.ViewModels
                 CacheContext.TrainingCache.DeleteCache();
                 SelectedItem = null;
                 OnPropertyChanged(nameof(CanClear));
+                OnPropertyChanged(nameof(TotalCalories));
             });
 
         public ICommand DeleteCurrentCommand =>
             new Command(() =>
             {
                 TrainingList.Remove(SelectedItem);
-                CacheContext.TrainingCache.DeleteItem();
+                CacheContext.TrainingCache.DeleteItem(SelectedItem.CacheId);
                 SelectedItem = null;
                 OnPropertyChanged(nameof(CanClear));
+                OnPropertyChanged(nameof(TotalCalories));
             });
 
         public ICommand PlusClickCommand =>
